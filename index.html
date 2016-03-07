@@ -1,0 +1,108 @@
+<!DOCTYPE html> 
+<html ng-app='footmenApp'>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+    <script src="../libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="../libs/angular/angular.js"></script>
+    <script src="../libs/angular/angular-animate.min.js"></script>
+
+    <link rel="stylesheet" href="../libs/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="controllers/mainCtrl.js"></script>
+    <script src="services/footmenService.js"></script>
+    <script src="js/app.js"></script>
+
+</head>
+
+<body ng-controller="mainCtrl">
+    
+    <div class="container">
+
+        <header>
+            <div id="headerMenu">
+                <nav role='navigation'>
+                  <ul>
+                    <li><a href="#"><img src="img/menu-options.png" />Menu</a>
+                      <ul>
+                        <li><a href="">Optie 1</a></li>
+                        <li><a href="">Optie 2</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </nav> 
+            </div>
+            <div id="headerTitle"><img src="img/logo-black.png" /></div>
+            <div id="headerLogos">
+                    <a href="">Downloads</a>
+                    <a href=""><img src="img/apple.png" /></a> |
+                    <a href=""><img src="img/google.png" /></a>
+            </div>
+        </header>
+
+        <section>
+            <div id="content">
+                <div class="panelLeft">
+
+                    <article ng-mouseenter="muteButton=true" ng-mouseleave="muteButton=false">
+
+                        <div ng-hide="hideVideoText" class="fadein fadeout">
+                            <div class="panelLeftText">
+                                <p class="titel">Word een bezorger</p>
+                                <p class="subText">Verdien tot € 11 per uur, deel online je werktijden in en wordt een onderdeel van het Footmen-team!<br />Niet ongelangrijk: je werk houdt je fit!</p>
+                            </div>
+
+                            <div class="buttonGroupLeft">
+                                <button class="login">Log in</button>of<button class="registreer">Registreer</button>
+                            </div>
+                        </div>
+
+                        <div class="muteButton fadeinFast fadeoutFast" ng-show="muteButton">
+                            <img src="img/muted.png" ng-click="soundVideo()" ng-show="videoSound" />
+                            <img src="img/unmuted.png" ng-click="soundVideo()" ng-show="!videoSound" />
+                            <p class="muteButtonText">Bekijk hoe het werkt</p>
+                        </div>
+
+                        <video autoplay loop id="video" muted>
+                            <source src="img/background.mp4" type="video/mp4">
+                        </video>
+
+                    </article>
+                </div>
+                <div class="panelRight">
+
+                    <img src="img/iphone.png" />
+
+                    <div class="panelRightText">
+                        <p class="titel">Vind een bezorger</p>
+                    </div>
+
+                    <div class="panelRightList">
+                        <ul>
+                            <li>Eenvouding en snel</li>
+                            <li>Geen cash</li>
+                            <li>Geen contract</li>
+                            <li>Live tracking van de bezorger</li>
+                            <li>Vaste tarieven</li>
+                        </ul>
+                    </div>
+
+                    <div class="buttonGroupRight">
+                        <button class="login">Log in</button>of<button class="registreer">Registreer</button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div id="footerCopyright">© 2016 Footmen</div>
+            <div id="footerLinks"><a href="">AV</a><a href="">Privacy</a><a href="">Zakelijk</a><a href="">Colofon</a><a href="">Contact</a><a href="">Pers</a><a href="">Vacatures</a><a href="">Affiliate</a></div>
+        </footer>
+
+    </div>
+
+</body>
+</html>

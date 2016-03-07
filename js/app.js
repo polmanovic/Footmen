@@ -1,0 +1,1 @@
+angular.module('footmenApp', ['mainCtrl', 'footmenService', 'ngAnimate']); 
